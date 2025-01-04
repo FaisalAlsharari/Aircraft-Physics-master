@@ -27,7 +27,7 @@ public class BladesController : MonoBehaviour
 
      void Start() 
      {
-        Rotation = transform.localEulerAngles;
+        Rotation = transform.parent.localEulerAngles;
     }
 
      void Update() 
@@ -45,13 +45,13 @@ public class BladesController : MonoBehaviour
             {
 
             case Axis.y:
-              transform.localRotation = Quaternion.Euler(Rotation.x, rotateDegree, Rotation.z);
+              transform.parent.localRotation = Quaternion.Euler(Rotation.x, rotateDegree, Rotation.z);
               break;
             case Axis.Z:
-              transform.localRotation = Quaternion.Euler(Rotation.x, Rotation.y , rotateDegree);
+              transform.parent.localRotation = Quaternion.Euler(Rotation.x, Rotation.y , rotateDegree);
               break;
             default:
-            transform.localRotation = Quaternion.Euler(rotateDegree, Rotation.y, Rotation.z);
+            transform.parent.localRotation = Quaternion.Euler(rotateDegree, Rotation.y, Rotation.z);
             break;
 
 
